@@ -6,6 +6,7 @@ for (const p of PUZZLES) {
   console.assert(typeof p.id === 'number', `puzzle ${p.id}: id must be number`);
   console.assert(typeof p.date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(p.date), `puzzle ${p.id}: bad date`);
   console.assert(p.startWord.length === p.endWord.length, `puzzle ${p.id}: word length mismatch`);
+  console.assert(p.moves === 4, `Puzzle ${p.id}: moves must be 4, got ${p.moves}`);
   console.assert(Array.isArray(p.solution) && p.solution.length === p.moves + 1, `puzzle ${p.id}: solution length != moves+1`);
   console.assert(p.solution[0] === p.startWord, `puzzle ${p.id}: solution[0] != startWord`);
   console.assert(p.solution[p.solution.length - 1] === p.endWord, `puzzle ${p.id}: solution[-1] != endWord`);
